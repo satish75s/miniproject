@@ -1,7 +1,47 @@
-<h1>App is a Parent Component</h1>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link active" routerLink="login">Login</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="registration">Registration</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="employee">Employee</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="project">Project</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="empprojectmap">Employee Project Map</a>
+          </li>
+          <li class="nav-item" style="margin-top:-12px;">
+            <a class="nav-link" routerLink="dashboard">Dashboard</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+<!--<h1>App is a Parent Component</h1>
 <div><app-dashboard></app-dashboard></div>
 <div><app-employee></app-employee></div>
 <div><app-registration></app-registration></div>
 <div><app-loginform></app-loginform></div>
 <div><app-project></app-project></div>
-<div><app-empprojectmap></app-empprojectmap></div>
+<div><app-empprojectmap></app-empprojectmap></div>-->

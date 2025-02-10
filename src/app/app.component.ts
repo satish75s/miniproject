@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { ProjectComponent } from './pages/project/project.component';
@@ -9,8 +9,7 @@ import { EmpprojectmapComponent } from './pages/empprojectmap/empprojectmap.comp
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RegistrationComponent,EmployeeComponent,ProjectComponent,DashboardComponent,
-    LoginformComponent, EmpprojectmapComponent],
+  imports: [RouterOutlet,RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

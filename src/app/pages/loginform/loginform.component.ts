@@ -5,10 +5,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { IUserToken } from '../../models/UserToken';
 import { MasterService } from '../../services/master.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-loginform',
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, MatInputModule, MatButtonModule],
+  imports: [RouterLink, CommonModule, ReactiveFormsModule, FormsModule, MatInputModule, MatButtonModule],
   templateUrl: './loginform.component.html',
   styleUrl: './loginform.component.css'
 })
@@ -27,7 +28,7 @@ export class LoginformComponent {
 
 }
 masterService=inject(MasterService);
-
+route=inject(Router);
 // Login form submit
 onLogin() {
   
@@ -37,13 +38,11 @@ onLogin() {
     this.masterService.authenticateUser(this.loginForm.value).subscribe(
       (response: IUserToken) => {
         // Show the message from the response
+        alert("login is success");
         alert("accessToken=="+response.accessToken);
-        alert("refreshToken=="+response.refreshToken);
-    
-        // Log the response for debugging
+        localStorage.setItem("AccessToken",response.accessToken);
+        this.route.navigateByUrl("dashboard")
         console.log('User registered successfully:', response);
-    
-        // Reset form on successful registration
         this.loginForm.reset();
       },
       (error: any) => {
